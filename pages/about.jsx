@@ -25,7 +25,7 @@ export default function About() {
         <div className="w-full max-w-4xl bg-transparent rounded-lg shadow-lg p-10">
           <h2 className="text-3xl text-accent font-bold mb-6">Welcome to The Palm Haven Hotel</h2>
           <p className="text-lg text-accent mb-6">
-            The Palm Haven Hotel is your sanctuary of luxury and comfort in the heart of Lagos. Our mission is to provide every guest with an exceptional experience, blending world-class hospitality with the warmth of home.
+            The Palm Haven Hotel is your sanctuary of luxury and comfort in the heart of British Columbia. Our mission is to provide every guest with an exceptional experience, blending world-class hospitality with the warmth of home.
           </p>
           <p className="text-base text-accent mb-4">
             From our elegantly appointed rooms and suites to our relaxing spa, gourmet restaurant, and tranquil gardens, every detail is designed to make your stay memorable. Whether you are visiting for business or leisure, our dedicated team is committed to exceeding your expectations.

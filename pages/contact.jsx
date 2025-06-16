@@ -79,8 +79,8 @@ export default function Contact() {
             <h2 className="text-3xl font-bold mb-4 text-accent">Contact Information</h2>
             <p className="mb-6 text-accent">
               The Palm Haven Hotel<br />
-              123 Palm Avenue, Victoria Island<br />
-              Lagos, Nigeria
+              2008 North Rd Burnaby <br />
+              British Columbia, Canada.
             </p>
             <div className="mb-4 flex items-center">
               <i className="fa fa-phone mr-2 text-primary"></i>
@@ -90,17 +90,25 @@ export default function Contact() {
               <i className="fa fa-envelope mr-2 text-primary"></i>
               <span className="text-accent">info@palmhavenhotel.com</span>
             </div>
+            <div className="mb-4 flex items-center">
+              <i className="fa fa-envelope mr-2 text-primary"></i>
+              <span className="text-accent">careers@palmhavenhotel.com</span>
+            </div>
+            <div className="mb-4 flex items-center">
+              <i className="fa fa-envelope mr-2 text-primary"></i>
+              <span className="text-accent">recruitment@palmhavenhotel.com</span>
+            </div>
             <div className="flex gap-4 mt-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <i className="fa fa-facebook-f text-2xl text-primary"></i>
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <a href="https://x.com/thepalmhaven" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                 <i className="fa fa-twitter text-2xl text-primary"></i>
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <i className="fa fa-instagram text-2xl text-primary"></i>
               </a>
-              <a href="https://wa.me/2349054060454" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                 <i className="fa fa-whatsapp text-2xl text-primary"></i>
               </a>
             </div>
