@@ -77,7 +77,7 @@ const Header = () => {
                                 ${menuOpen ? "mb-4" : ""}
                                 `}>
                                 <i className="fa fa-phone mr-2"></i>
-                                <p>+2349054060454</p>
+                                <p>+1 (416) 742-9836</p>
                             </li>
                             <li onClick={closeAll} className={`mr-5 ${menuOpen ? "mb-4" : ""}`}>
                                 <Link href="/gallery" className="header-link h-max w-max flex items-center">

@@ -84,7 +84,7 @@ export default function Contact() {
             </p>
             <div className="mb-4 flex items-center">
               <i className="fa fa-phone mr-2 text-primary"></i>
-              <span className="text-accent">+2349054060454</span>
+              <span className="text-accent">+1 (416) 742-9836</span>
             </div>
             <div className="mb-4 flex items-center">
               <i className="fa fa-envelope mr-2 text-primary"></i>
