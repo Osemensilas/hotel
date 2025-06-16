@@ -65,9 +65,6 @@ export default function GardenCottage() {
               <li>High-speed Wi-Fi and smart TV</li>
               <li>24/7 room service</li>
             </ul>
-            <button className="px-8 py-3 bg-primary text-offWhite rounded hover:bg-accent transition-all duration-300 w-max">
-              Book This Cottage
-            </button>
           </div>
         </div>
       </section>

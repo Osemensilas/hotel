@@ -1,9 +1,12 @@
-import Layout from "@/components/Layout";
+import Layout from '../components/Layout'; 
 import "@/styles/globals.css";
 
-export default function App({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
+    <Layout 
+      hideHeader={Component.hideHeader} 
+      hideFooter={Component.hideFooter}
+    >
       <Component {...pageProps} />
     </Layout>
   );

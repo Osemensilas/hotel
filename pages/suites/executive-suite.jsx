@@ -11,7 +11,7 @@ const images = [
 
 export default function ExecutiveSuite() {
   const [mainImg, setMainImg] = useState(0);
-
+ 
   return (
     <>
       <Head>
@@ -65,9 +65,6 @@ export default function ExecutiveSuite() {
               <li>Complimentary breakfast</li>
               <li>24/7 room service</li>
             </ul>
-            <button className="px-8 py-3 bg-primary text-offWhite rounded hover:bg-accent transition-all duration-300 w-max">
-              Book This Suite
-            </button>
           </div>
         </div>
       </section>

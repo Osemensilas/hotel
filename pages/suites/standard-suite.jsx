@@ -65,9 +65,6 @@ export default function StandardSuite() {
               <li>Complimentary breakfast</li>
               <li>24/7 room service</li>
             </ul>
-            <button className="px-8 py-3 bg-primary text-offWhite rounded hover:bg-accent transition-all duration-300 w-max">
-              Book This Suite
-            </button>
           </div>
         </div>
       </section>

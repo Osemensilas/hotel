@@ -1,6 +1,57 @@
 import Link from "next/link";
+import { useState } from "react";
+import axios from "axios";
 
 const Footer = () => {
+
+    const [contactError, setContactError] = useState('');
+    const [formData, setFormData] = useState({
+        'name': '',
+        'email' : '',
+        'message' : '',
+    })
+
+    const handleChanged = (e) => {
+        const { name, value} = e.target;
+        setFormData({...formData, [name]: value});
+    }
+
+    const formSubmitted = async (e) => {
+        e.preventDefault();
+
+        let nameVal = /^[a-zA-Z]+(?: [a-zA-Z]+)+$/;
+        let emailVal = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        let errorValue = false;
+        if (!nameVal.test(formData.name)){
+            setContactError('Please enter a valid name');
+            errorValue = true;
+        }else{
+            setContactError('');
+
+            if (!emailVal.test(formData.email)){
+                setContactError('Please enter a valid email');
+                errorValue = true;
+            }else{
+                setContactError('');
+            }
+        }
+
+        if (!errorValue){
+            try{
+                let url = "http://localhost/backends/hotel/message.php";
+
+                const response = await axios.post(url, formData, {
+                    headers: {
+                        'Content-Type' : 'application/json'
+                    },withCredentials: true,
+                });
+                console.log(response.data)
+            }catch(error){
+                console.log("Error submitting form:", error);
+            }
+        }
+    }
     return ( 
         <>
         <footer className="w-screen bg-primary text-offWhite py-12 px-10 mt-10">
@@ -36,36 +87,42 @@ const Footer = () => {
             <div className="flex-1 mb-8 md:mb-0 flex flex-col gap-2">
                 <h3 className="font-semibold mb-2">Quick Links</h3>
                 <Link href="/" className="hover:underline">Home</Link>
-                <Link href="/#about" className="hover:underline">About</Link>
-                <Link href="/#gallery" className="hover:underline">Gallery</Link>
-                <Link href="/#reviews" className="hover:underline">Reviews</Link>
-                <Link href="/#booking" className="hover:underline">Book Now</Link>
+                <Link href="/gallery" className="hover:underline">Gallery</Link>
+                <Link href="/suite-and-cottage" className="hover:underline">Suite & Cottage</Link>
+                <Link href="/about" className="hover:underline">About Us</Link>
+                <Link href="/contact" className="hover:underline">Contact Us</Link>
             </div>
             {/* Right: Contact Form */}
             <div className="flex-1">
-                <h3 className="font-semibold mb-4">Contact Us</h3>
+                <h3 className="font-semibold mb-4">Get Intouch</h3>
+                <div className={`my-2 w-full text-center py-2 h-max bg-red-500 rounded text-accent text-base
+                    ${contactError ? 'block' : 'hidden'}`}>
+                    {contactError}
+                </div>
                 <form
                 className="flex flex-col gap-3"
-                onSubmit={e => {
-                    e.preventDefault();
-                    // Add your contact form logic here (API call, toast, etc.)
-                    alert("Thank you for reaching out! We'll get back to you soon.");
-                }}
+                onSubmit={formSubmitted}
                 >
                 <input
                     type="text"
-                    required
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChanged}
                     placeholder="Your Name"
                     className="px-4 py-2 rounded border border-accent text-black"
                 />
                 <input
                     type="email"
-                    required
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChanged}
                     placeholder="Your Email"
                     className="px-4 py-2 rounded border border-accent text-black"
                 />
                 <textarea
-                    required
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChanged}
                     placeholder="Your Message"
                     className="px-4 py-2 rounded border border-accent text-black"
                     rows={3}
