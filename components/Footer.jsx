@@ -61,34 +61,20 @@ const Footer = () => {
                 <h2 className="text-2xl font-bold mb-2">The Palm Haven Hotel</h2>
                 <p className="mb-4">© {new Date().getFullYear()} The Palm Haven Hotel. All rights reserved.</p>
                 <div className="flex items-center gap-4 mb-4">
-                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                    <i className="fa fa-facebook-f text-2xl hover:text-accent"></i>
-                </a>
                 <a href="https://x.com/thepalmhaven" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                     <i className="fa fa-twitter text-2xl hover:text-accent"></i>
                 </a>
-                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                    <i className="fa fa-instagram text-2xl hover:text-accent"></i>
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <a href="https://wa.me/14182218627" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                     <i className="fa fa-whatsapp text-2xl hover:text-accent"></i>
                 </a>
                 </div>
                 <div className="flex items-center gap-4">
                     <i className="fa fa-phone"></i>
-                    <span>+1 (416) 742-9836</span>
+                    <span>+1 (548) 800-4031</span>
                 </div>
                 <div className="flex items-center gap-4 mt-2">
                     <i className="fa fa-envelope"></i>
                     <span>info@palmhavenhotel.com</span>
-                </div>
-                <div className="flex items-center gap-4 mt-2">
-                    <i className="fa fa-envelope"></i>
-                    <span>careers@palmhavenhotel.com</span>
-                </div>
-                <div className="flex items-center gap-4 mt-2">
-                    <i className="fa fa-envelope"></i>
-                    <span>recruitment@palmhavenhotel.com</span>
                 </div>
             </div>
             {/* Center: Navigation */}

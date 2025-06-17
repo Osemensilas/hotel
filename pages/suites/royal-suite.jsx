@@ -3,10 +3,10 @@ import Head from "next/head";
 import { motion } from "framer-motion";
 
 const images = [
-  "/royal-suite.jpg",
-  "/royal-suite2.jpg",
-  "/royal-suite3.jpg",
-  "/royal-suite4.jpg"
+  "/royal-suite.png",
+  "/royal-suite2.png",
+  "/royal-suite3.png",
+  "/royal-suite4.png"
 ];
 
 export default function RoyalSuite() {
@@ -18,7 +18,7 @@ export default function RoyalSuite() {
         <title>Royal Suite | The Palm Haven Hotel</title>
       </Head>
       <section className="w-screen h-[60vh] flex items-end justify-center relative bg-cover bg-center"
-        style={{ backgroundImage: "url('/royal-suite.jpg')" }}>
+        style={{ backgroundImage: "url('/royal-suite.png')" }}>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <motion.h1 className="text-5xl md:text-6xl font-bold text-accent mb-10 relative z-10"
         initial={{opacity: 0, y: 100}}

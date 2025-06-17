@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Booking from "../components/Booking";
 import Image from "next/image";
 import Head from "next/head";
+import axios from "axios";
 
 const slides = [
   { id: 1, title: "The Palm Haven Hotel", image: "/hero1.jpg" },
@@ -14,7 +15,8 @@ const slides = [
 export default function Home() {
   const [index, setIndex] = useState(0);
   const [formVisible, setFormVisible] = useState("w-screen h-screen px-2 fixed top-0 left-0 z-20 form-hide");
-  
+  const [subEmail, setSubEmail] = useState('');
+  const [subError, setSubError] = useState('');
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,6 +31,37 @@ export default function Home() {
 
   const cancelForm = () => {
     setFormVisible("w-screen h-screen px-2 fixed top-0 left-0 z-20 form-hide");
+  }
+
+  const subscribe = async (e) => {
+    e.preventDefault();
+
+    let emailVal = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (subEmail === ""){
+      setSubError('Email required');
+    }else{
+      setSubEmail('');
+
+      if (!emailVal.test(subEmail)){
+        setSubError('Invalid email address');
+      }else{
+        setSubError('');
+
+        try{
+          let url = "http://localhost/backends/hotel/subscribe.php";
+
+          const response = await axios.post(url, subEmail, {
+            headers: {
+              'Content-Type': 'application/json',
+            },withCredentials: true,
+          })
+          console.log(response.data);
+        }catch(err){
+          console.log("Error subscribing: ", err);
+        }
+      }
+    }
   }
 
   return (
@@ -165,17 +198,19 @@ export default function Home() {
         <p className="text-base text-accent mb-8 text-center max-w-xl">
           Stay updated with the latest news, exclusive offers, and special events from The Palm Haven Hotel. Enter your email below to join our mailing list!
         </p>
+        <div className={`my-2 w-[80%] sm:w-[40vw] text-center py-2 h-max bg-red-500 rounded text-accent text-base
+          ${subError ? 'block' : 'hidden'}`}>
+          {subError}
+        </div>
         <form
           className="flex flex-col sm:flex-row items-center gap-4 w-full max-w-lg"
-          onSubmit={e => {
-            e.preventDefault();
-            // Add your subscribe logic here (API call, toast, etc.)
-            alert("Thank you for subscribing!");
-          }}
+          onSubmit={subscribe}
         >
           <input
             type="email"
-            required
+            name="email"
+            value={subEmail}
+            onChange={(e) => setSubEmail(e.target.value)}
             placeholder="Enter your email"
             className="flex-1 px-4 py-3 outline-0 rounded border border-accent"
           />

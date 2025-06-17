@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 const suites = [
   {
     name: "Royal Suite",
-    image: "/royal-suite.jpg",
+    image: "/royal-suite.png",
     rooms: 3,
     description: "Experience luxury in our Royal Suite, featuring a spacious living area, king-size bed, and a private balcony with stunning views.",
     link: "/suites/royal-suite"
   },
   {
     name: "Executive Suite",
-    image: "/executive-suite.jpg",
+    image: "/executive-suite.png",
     rooms: 2,
     description: "Perfect for business or leisure, the Executive Suite offers comfort, style, and modern amenities.",
     link: "/suites/executive-suite"
@@ -55,7 +55,7 @@ export default function SuiteAndCottage() {
       </Head>
       <section
         className="w-screen h-[60vh] flex items-end justify-center relative bg-cover bg-center"
-        style={{ backgroundImage: "url('/suite-hero.jpg')" }} // Replace with your hero image
+        style={{ backgroundImage: "url('/suite-hero.jpg')" }} 
       >
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <motion.h1 className="text-5xl md:text-6xl font-bold text-accent mb-10 relative z-10"
