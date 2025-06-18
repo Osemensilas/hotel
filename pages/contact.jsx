@@ -140,7 +140,7 @@ export default function Contact() {
               />
               <button
                 type="submit"
-                className="px-8 py-3 bg-primary text-offWhite rounded hover:bg-accent transition-all duration-300"
+                className="px-8 py-3 bg-primary text-offWhite rounded transition-all duration-300"
               >
                 Send Message
               </button>
