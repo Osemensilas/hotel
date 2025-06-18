@@ -84,23 +84,17 @@ export default function Contact() {
             </p>
             <div className="mb-4 flex items-center">
               <i className="fa fa-phone mr-2 text-primary"></i>
-              <span className="text-accent">+1 (416) 742-9836</span>
+              <span className="text-accent">+1 (548) 800-4031</span>
             </div>
             <div className="mb-4 flex items-center">
               <i className="fa fa-envelope mr-2 text-primary"></i>
               <span className="text-accent">info@palmhavenhotel.com</span>
             </div>
             <div className="flex gap-4 mt-4">
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                <i className="fa fa-facebook-f text-2xl text-primary"></i>
-              </a>
               <a href="https://x.com/thepalmhaven" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                 <i className="fa fa-twitter text-2xl text-primary"></i>
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <i className="fa fa-instagram text-2xl text-primary"></i>
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <a href="https://wa.me/14182218627" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                 <i className="fa fa-whatsapp text-2xl text-primary"></i>
               </a>
             </div>
