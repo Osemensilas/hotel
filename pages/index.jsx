@@ -15,7 +15,7 @@ const slides = [
 export default function Home() {
   const [index, setIndex] = useState(0);
   const [formVisible, setFormVisible] = useState("w-screen h-screen px-2 fixed top-0 left-0 z-20 form-hide");
-  const [subEmail, setSubEmail] = useState('');
+  const [subEmail, setSubEmail] = useState({'email': ''});
   const [subError, setSubError] = useState('');
 
   useEffect(() => {
@@ -209,14 +209,14 @@ export default function Home() {
           <input
             type="email"
             name="email"
-            value={subEmail}
+            value={subEmail.email}
             onChange={(e) => setSubEmail(e.target.value)}
             placeholder="Enter your email"
             className="flex-1 px-4 py-3 outline-0 rounded border border-accent"
           />
           <button
             type="submit"
-            className="px-8 py-3 bg-primary text-offWhite rounded hover:bg-accent transition-all duration-300"
+            className="px-8 py-3 bg-primary text-offWhite rounded transition-all duration-300"
           >
             Subscribe
           </button>
