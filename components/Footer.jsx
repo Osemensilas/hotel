@@ -39,7 +39,7 @@ const Footer = () => {
 
         if (!errorValue){
             try{
-                let url = "http://localhost/backends/hotel/message.php";
+                let url = "https://backend.palmhavenhotel.com/message.php";
 
                 const response = await axios.post(url, formData, {
                     headers: {

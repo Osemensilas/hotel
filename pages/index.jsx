@@ -49,7 +49,7 @@ export default function Home() {
         setSubError('');
 
         try{
-          let url = "http://localhost/backends/hotel/subscribe.php";
+          let url = "https://backend.palmhavenhotel.com/subscribe.php";
 
           const response = await axios.post(url, subEmail, {
             headers: {

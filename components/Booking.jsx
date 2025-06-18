@@ -44,14 +44,14 @@ const Booking = () => {
                 }else{
                     setBookingError('');
 
-                    if (!formData.phone || isNaN(formData.phone) || formData.phone <= 0){
-                        setBookingError('Please enter a valid number of adults');
+                    if (!formData.phone){
+                        setBookingError('Please enter a phone number');
                         errorValue = true;
                     }else{
                         setBookingError('');
 
                         if (!formData.suite){
-                            setBookingError('Please enter a valid number of children');
+                            setBookingError('Book a suite of cottage');
                             errorValue = true;
                         }else{
                             setBookingError('');
@@ -63,7 +63,7 @@ const Booking = () => {
 
         if (!errorValue){
             try{
-                let url = "http://localhost/backends/hotel/booking.php";
+                let url = "https://backend.palmhavenhotel.com/booking.php";
 
                 const response = await axios.post(url, formData,{
                     headers: {
