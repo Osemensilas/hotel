@@ -90,14 +90,6 @@ export default function Contact() {
               <i className="fa fa-envelope mr-2 text-primary"></i>
               <span className="text-accent">info@palmhavenhotel.com</span>
             </div>
-            <div className="mb-4 flex items-center">
-              <i className="fa fa-envelope mr-2 text-primary"></i>
-              <span className="text-accent">careers@palmhavenhotel.com</span>
-            </div>
-            <div className="mb-4 flex items-center">
-              <i className="fa fa-envelope mr-2 text-primary"></i>
-              <span className="text-accent">recruitment@palmhavenhotel.com</span>
-            </div>
             <div className="flex gap-4 mt-4">
               <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <i className="fa fa-facebook-f text-2xl text-primary"></i>
