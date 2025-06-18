@@ -38,12 +38,12 @@ export default function Home() {
 
     let emailVal = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    if (subEmail === ""){
+    if (subEmail.email === ""){
       setSubError('Email required');
     }else{
       setSubEmail('');
 
-      if (!emailVal.test(subEmail)){
+      if (!emailVal.test(subEmail.email)){
         setSubError('Invalid email address');
       }else{
         setSubError('');
