@@ -57,11 +57,12 @@ export default function Home() {
               'Content-Type': 'application/json',
             },withCredentials: true,
           })
-          console.log(response.data);
-
+          
           const {status, message} = response.data;
 
           if (status === 'success'){
+            console.log(response.data);
+
             setContactSuccess(message);
           }
         }catch(err){
