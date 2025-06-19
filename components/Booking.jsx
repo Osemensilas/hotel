@@ -157,6 +157,7 @@ const Booking = () => {
                     ${bookingError ? 'block bg-red-500 ' : 'hidden'}${contactSuccess ? 'block bg-green-500' : 'hidden'}
                     `}>
                     {bookingError}
+                    {contactSuccess}
                 </div>
                 <div className="w-full h-max grid grid-cols-1 sm:grid-cols-2 mb-3">
                     <div className="w-full h-max mb-3">

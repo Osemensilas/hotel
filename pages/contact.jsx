@@ -110,6 +110,7 @@ export default function Contact() {
             <div className={`my-2 w-full text-center py-2 h-max rounded text-accent text-base
               ${contactError ? 'block bg-red-500' : 'hidden'}${contactSuccess ? 'block bg-green-500' : 'hidden'}`}>
               {contactError}
+              {contactSuccess}
             </div>
             <form
               className="flex flex-col gap-5"
