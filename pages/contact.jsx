@@ -49,6 +49,11 @@ export default function Contact() {
                   },withCredentials: true,
               });
               console.log(response.data)
+              const {status, message} = response.data;
+
+              if (status === 'success'){
+                setContactSuccess(message);
+              }
           }catch(error){
               console.log("Error submitting form:", error);
           }
