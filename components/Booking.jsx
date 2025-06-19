@@ -153,12 +153,14 @@ const Booking = () => {
                 <header className="w-full h-max py-5 mb-2 sm:mb-5 border-b border-grey">
                     <h2 className="text-2xl sm:text-4xl text-offBlack text-center">Book Reservation</h2>
                 </header>
-                <div className={`rounded text-accent text-base w-full h-10 flex justify-center items-center mb-1
-                    ${bookingError ? 'block bg-red-500 ' : 'hidden'}${contactSuccess ? 'block bg-green-500' : 'hidden'}
-                    `}>
+                {bookingError && (<div className="bg-red-500 rounded text-accent text-base w-full h-10 flex justify-center items-center mb-1">
                     {bookingError}
+                </div>
+                )}
+                {contactSuccess && (<div className="bg-green-500 rounded text-accent text-base w-full h-10 flex justify-center items-center mb-1">
                     {contactSuccess}
                 </div>
+                )}
                 <div className="w-full h-max grid grid-cols-1 sm:grid-cols-2 mb-3">
                     <div className="w-full h-max mb-3">
                         <div className="h-max flex flex-col items-start justify-start" style={{width: '98%'}}>

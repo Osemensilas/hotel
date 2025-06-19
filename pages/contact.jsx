@@ -112,11 +112,17 @@ export default function Contact() {
             <p className="text-base text-accent mb-8 text-center md:text-left">
               We'd love to hear from you! Please fill out the form below and our team will get back to you as soon as possible.
             </p>
-            <div className={`my-2 w-full text-center py-2 h-max rounded text-accent text-base
-              ${contactError ? 'block bg-red-500' : 'hidden'}${contactSuccess ? 'block bg-green-500' : 'hidden'}`}>
-              {contactError}
-              {contactSuccess}
-            </div>
+            {contactError && (
+              <div className="my-2 w-full text-center py-2 h-max rounded text-base text-accent bg-red-500">
+                {contactError}
+              </div>
+            )}
+
+            {contactSuccess && (
+              <div className="my-2 w-full text-center py-2 h-max rounded text-base text-accent bg-green-500">
+                {contactSuccess}
+              </div>
+            )}
             <form
               className="flex flex-col gap-5"
               onSubmit={formSubmitted}
