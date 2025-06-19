@@ -17,6 +17,7 @@ export default function Home() {
   const [formVisible, setFormVisible] = useState("w-screen h-screen px-2 fixed top-0 left-0 z-20 form-hide");
   const [subEmail, setSubEmail] = useState('');
   const [subError, setSubError] = useState('');
+  const [contactSuccess, setContactSuccess] = useState('');
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -57,6 +58,12 @@ export default function Home() {
             },withCredentials: true,
           })
           console.log(response.data);
+
+          const {status, message} = response.data;
+
+          if (status === 'success'){
+            setContactSuccess(message);
+          }
         }catch(err){
           console.log("Error subscribing: ", err);
         }
@@ -198,10 +205,15 @@ export default function Home() {
         <p className="text-base text-accent mb-8 text-center max-w-xl">
           Stay updated with the latest news, exclusive offers, and special events from The Palm Haven Hotel. Enter your email below to join our mailing list!
         </p>
-        <div className={`my-2 w-[80%] sm:w-[40vw] text-center py-2 h-max bg-red-500 rounded text-accent text-base
+        {subError&&(<div className={`my-2 w-[80%] sm:w-[40vw] text-center py-2 h-max bg-red-500 rounded text-accent text-base
           ${subError ? 'block' : 'hidden'}`}>
           {subError}
-        </div>
+        </div>)}
+        {contactSuccess && (
+              <div className="my-2 w-full text-center py-2 h-max rounded text-base text-accent bg-green-500">
+                {contactSuccess}
+              </div>
+            )}
         <form
           className="flex flex-col sm:flex-row items-center gap-4 w-full max-w-lg"
           onSubmit={subscribe}
