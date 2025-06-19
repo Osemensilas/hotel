@@ -15,7 +15,7 @@ const slides = [
 export default function Home() {
   const [index, setIndex] = useState(0);
   const [formVisible, setFormVisible] = useState("w-screen h-screen px-2 fixed top-0 left-0 z-20 form-hide");
-  const [subEmail, setSubEmail] = useState({'email': ''});
+  const [subEmail, setSubEmail] = useState('');
   const [subError, setSubError] = useState('');
 
   useEffect(() => {
@@ -38,12 +38,14 @@ export default function Home() {
 
     let emailVal = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    if (subEmail.email === ""){
+    if (subEmail === ""){
       setSubError('Email required');
     }else{
       setSubEmail('');
 
-      if (!emailVal.test(subEmail.email)){
+      console.log(subEmail);
+
+      if (!emailVal.test(subEmail)){
         setSubError('Invalid email address');
       }else{
         setSubError('');
@@ -51,7 +53,7 @@ export default function Home() {
         try{
           let url = "https://backend.palmhavenhotel.com/subscribe.php";
 
-          const response = await axios.post(url, subEmail, {
+          const response = await axios.post(url, {'email': subEmail} , {
             headers: {
               'Content-Type': 'application/json',
             },withCredentials: true,
@@ -209,7 +211,7 @@ export default function Home() {
           <input
             type="email"
             name="email"
-            value={subEmail.email}
+            value={subEmail}
             onChange={(e) => setSubEmail(e.target.value)}
             placeholder="Enter your email"
             className="flex-1 px-4 py-3 outline-0 rounded border border-accent"

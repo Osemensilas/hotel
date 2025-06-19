@@ -48,7 +48,6 @@ export default function Contact() {
                       'Content-Type' : 'application/json'
                   },withCredentials: true,
               });
-              console.log(response.data)
               const {status, message} = response.data;
 
               if (status === 'success'){
