@@ -6,6 +6,7 @@ import axios from "axios";
 export default function Contact() {
 
   const [contactError, setContactError] = useState('');
+  const [contactSuccess, setContactSuccess] = useState('');
   const [formData, setFormData] = useState({
       'name': '',
       'email' : '',
@@ -106,8 +107,8 @@ export default function Contact() {
             <p className="text-base text-accent mb-8 text-center md:text-left">
               We'd love to hear from you! Please fill out the form below and our team will get back to you as soon as possible.
             </p>
-            <div className={`my-2 w-full text-center py-2 h-max bg-red-500 rounded text-accent text-base
-              ${contactError ? 'block' : 'hidden'}`}>
+            <div className={`my-2 w-full text-center py-2 h-max rounded text-accent text-base
+              ${contactError ? 'block bg-red-500' : 'hidden'}${contactSuccess ? 'block bg-green-500' : 'hidden'}`}>
               {contactError}
             </div>
             <form

@@ -4,6 +4,7 @@ import axios from "axios";
 const Booking = () => {
 
     const [bookingError, setBookingError] = useState('');
+    const [contactSuccess, setContactSuccess] = useState('');
     const [formData, setFormData] = useState({
         'fullname': '',
         'email': '',
@@ -136,7 +137,7 @@ const Booking = () => {
                 }
 
                 if (msg === 'success'){
-                    alert("Booking successful");
+                    setContactSuccess('Booking successful');
                 }
             }catch(error){
                 console.log("Error submitting form: ", error);
@@ -152,8 +153,8 @@ const Booking = () => {
                 <header className="w-full h-max py-5 mb-2 sm:mb-5 border-b border-grey">
                     <h2 className="text-2xl sm:text-4xl text-offBlack text-center">Book Reservation</h2>
                 </header>
-                <div className={`bg-red-500 rounded text-accent text-base w-full h-10 flex justify-center items-center mb-1
-                    ${bookingError ? 'block' : 'hidden'}
+                <div className={`rounded text-accent text-base w-full h-10 flex justify-center items-center mb-1
+                    ${bookingError ? 'block bg-red-500 ' : 'hidden'}${contactSuccess ? 'block bg-green-500' : 'hidden'}
                     `}>
                     {bookingError}
                 </div>
