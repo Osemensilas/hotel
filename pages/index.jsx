@@ -43,8 +43,6 @@ export default function Home() {
     }else{
       setSubEmail('');
 
-      console.log(subEmail);
-
       if (!emailVal.test(subEmail)){
         setSubError('Invalid email address');
       }else{
