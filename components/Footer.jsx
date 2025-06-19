@@ -5,6 +5,7 @@ import axios from "axios";
 const Footer = () => {
 
     const [contactError, setContactError] = useState('');
+    const [contactSuccess, setContactSuccess] = useState('');
     const [formData, setFormData] = useState({
         'name': '',
         'email' : '',
@@ -89,10 +90,17 @@ const Footer = () => {
             {/* Right: Contact Form */}
             <div className="flex-1">
                 <h3 className="font-semibold mb-4">Get Intouch</h3>
-                <div className={`my-2 w-full text-center py-2 h-max bg-red-500 rounded text-accent text-base
-                    ${contactError ? 'block' : 'hidden'}`}>
+                {contactError && (
+                <div className="my-2 w-full text-center py-2 h-max rounded text-base text-accent bg-red-500">
                     {contactError}
                 </div>
+                )}
+
+                {contactSuccess && (
+                <div className="my-2 w-full text-center py-2 h-max rounded text-base text-accent bg-green-500">
+                    {contactSuccess}
+                </div>
+                )}
                 <form
                 className="flex flex-col gap-3"
                 onSubmit={formSubmitted}

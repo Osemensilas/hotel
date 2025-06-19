@@ -206,8 +206,7 @@ export default function Home() {
         <p className="text-base text-accent mb-8 text-center max-w-xl">
           Stay updated with the latest news, exclusive offers, and special events from The Palm Haven Hotel. Enter your email below to join our mailing list!
         </p>
-        {subError&&(<div className={`my-2 w-[80%] sm:w-[40vw] text-center py-2 h-max bg-red-500 rounded text-accent text-base
-          ${subError ? 'block' : 'hidden'}`}>
+        {subError && (<div className="my-2 w-[80%] sm:w-[40vw] text-center py-2 h-max bg-red-500 rounded text-accent text-base">
           {subError}
         </div>)}
         {contactSuccess && (
